@@ -4,6 +4,7 @@ import com.feng.dao.UserDao;
 import com.feng.model.User;
 import com.feng.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 /**
  * @Description
@@ -12,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
  * @Version V1.0
  */
 
+@Service
 public class UserServiceImpl implements UserService {
 
     @Autowired
