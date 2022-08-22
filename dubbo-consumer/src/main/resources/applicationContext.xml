@@ -7,16 +7,13 @@
        http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
        http://code.alibabatech.com/schema/dubbo
        http://code.alibabatech.com/schema/dubbo/dubbo.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
-
-    <context:component-scan base-package="com.feng.controller"></context:component-scan>
-
     <!-- 消费方应用名，用于计算依赖关系，不是匹配条件，不要与提供方一样 -->
-    <dubbo:application name="edu-eb-web" />
-
-    <!-- 使用zookeeper注册中心暴露服务地址 -->
-    <!-- 注册中心地址 -->
-    <dubbo:registry protocol="zookeeper" address="127.0.0.1:2181" />
-
-    <!-- 用户服务接口 -->
-    <dubbo:reference interface="com.feng.service.UserService" id="userService" check="false" />
+    <dubbo:application name="edu-eb-web"/>
+    <!--注册中心-->
+    <dubbo:registry protocol="zookeeper" address="162.14.77.50:2181"></dubbo:registry>
+    <!-- 用dubbo协议在20880端口暴露服务 -->
+    <dubbo:protocol name="dubbo" port="20880" />
+    <dubbo:annotation package="com.feng.controller"></dubbo:annotation>
+<!--    &lt;!&ndash; 用户服务接口 &ndash;&gt;-->
+<!--    <dubbo:reference interface="com.feng.service.UserService" version="v1.0" id="userService" check="false" />-->
 </beans>

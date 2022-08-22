@@ -5,6 +5,6 @@
 
 
     <select id="login" resultType="com.feng.model.User">
-        SELECT * FROM user WHERE username=#{username} and password=#{password}
+        SELECT * FROM user WHERE userName=#{username} and password=#{password}
     </select>
 </mapper>
